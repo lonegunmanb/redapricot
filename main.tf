@@ -78,7 +78,7 @@ resource "tencentcloud_instance" "haproxy" {
   instance_name                       = "haproxy"
   availability_zone                   = var.tencent_az
   image_id                            = data.tencentcloud_image.centos.image_id
-  instance_type                       = "${var.tencent_instance_type}"
+  instance_type                       = var.tencent_instance_type
   key_name                            = tencentcloud_key_pair.my_ssh_key.id
   security_groups                     = [
     tencentcloud_security_group.haproxy.id]
